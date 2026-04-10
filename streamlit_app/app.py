@@ -33,13 +33,14 @@ SCHEMA = os.getenv("SCHEMA")
 # =============================================================================
 
 
-def sqlQuery(query: str) -> pd.DataFrame:
+def sqlQuery(query: str, timeout: int = 300) -> pd.DataFrame:
     """Execute SQL query with configurable timeout."""
     cfg = Config()
     with sql.connect(
         server_hostname=cfg.host,
         http_path=f"/sql/1.0/warehouses/{os.getenv('DATABRICKS_WAREHOUSE_ID')}",
         credentials_provider=lambda: cfg.authenticate,
+        _socket_timeout=timeout,
     ) as connection:
         with connection.cursor() as cursor:
             cursor.execute(query)

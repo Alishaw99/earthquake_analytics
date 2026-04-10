@@ -35,14 +35,14 @@ targets:
     mode: development
     default: true
     workspace:
-      host: your-dev-databricks-workspace.cloud.databricks.com
+      host: https://dbc-678a5d85-cca0.cloud.databricks.com/
     variables:
       catalog: quake_lake
       schema: usgs_earthquakes_dev
   prod:
     mode: production
     workspace:
-      host: your-prod-databricks-workspace.cloud.databricks.com
+      host: https://dbc-678a5d85-cca0.cloud.databricks.com/
       # We explicitly deploy to /Workspace/Users/admin@pathfinder-analytics.net to make sure we only have a single copy.
       root_path: /Workspace/Users/admin@pathfinder-analytics.net/.bundle/${bundle.name}/${bundle.target}
     variables:

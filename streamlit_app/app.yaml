@@ -2,7 +2,7 @@ command: ['streamlit', 'run', 'app.py']
 
 env:
   - name: 'DATABRICKS_WAREHOUSE_ID'
-    value: 'your-databricks-sql-warehouse-id'
+    value: 'ed5ec13fe66dc168'
   - name: 'CATALOG'
     value: 'quake_lake'
   - name: 'SCHEMA'
